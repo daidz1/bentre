@@ -1,0 +1,74 @@
+.doc-block {
+	background: #fff;
+	box-shadow: 1px 1px 4px 2px #dadada;
+	font-size: var(--lumo-font-size-s);
+	/* border-radius: 10px; */
+	color: #213854;
+	/* margin-bottom: 10px; */
+}
+/*  
+.doc-block .row {
+	padding: 5px 5px;
+}
+
+.doc-block .caption-head {
+	display: inline-block;
+	width: 105px;
+	vertical-align: top;
+}
+
+.doc-block .org-created {
+	font-weight: 500;
+	padding: 5px 12px;
+	background: #f7eaed;
+	color: rgb(162, 27, 58);
+	border-radius: 10px;
+}
+
+.doc-block .org-recieved {
+	font-weight: 500;
+	padding: 5px 12px;
+	background: #1e5ebf1a;
+	color: #1e5ebf;
+	border-radius: 10px;
+}
+
+.doc-block .action-attachment, .action-detail {
+	padding: 3px 11px;
+	border-radius: 28px;
+	font-weight: 500;
+	cursor: pointer;
+	font-size: var(--lumo-font-size-s);
+}
+
+.doc-block .action-attachment {
+	background: rgb(101 95 89/ 12%);
+	color: rgb(101, 95, 89);
+}
+
+.doc-block .action-attachment:hover {
+	box-shadow: 0px 0px 2px 1px rgb(101 95 89/ 60%);
+}
+
+.doc-block .action-detail {
+	background: rgb(34, 100, 199);
+	color: rgb(255, 255, 255);
+}
+
+.doc-block .action-detail:hover {
+	box-shadow: 0px 0px 2px 2px rgb(34 100 199/ 41%);
+}
+
+.detail-docinfo {
+	box-shadow: rgb(228, 228, 228) 0px 1px 4px 2px;
+	background: #fff;
+	border-radius: 14px;
+	padding: 15px 25px;
+}
+
+.doc-block .square-bordered{
+	border-radius: 1em;
+    border: 0.5px solid grey; 
+}
+
+*/  

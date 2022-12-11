@@ -1,0 +1,16 @@
+.table-report {
+	width:100%;
+}
+
+.table-report,.table-report th,.table-report td{
+	border: 1px solid black;
+	border-collapse: collapse;
+	font-size: var(--lumo-font-size-m);
+}
+.table-report th{
+    height: 40px;
+    background: #c5ecff;
+}
+.table-report td{
+	padding: 5px;
+}

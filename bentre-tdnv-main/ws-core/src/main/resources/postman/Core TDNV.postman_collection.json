@@ -1,0 +1,1103 @@
+{
+	"info": {
+		"_postman_id": "5de165e0-0a9d-4506-8708-4e08fa320c03",
+		"name": "Core TDNV",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"user001\",\r\n    \"password\":\"abc123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost-coreliferay}}/admin/login",
+							"host": [
+								"{{localhost-coreliferay}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change-password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"passwordOld\":\"abc123\",\r\n    \"passwordNew\":\"abc123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{localhost-coreliferay}}/admin/user/change-password/605b0175d9b8222a8db47eb0",
+							"host": [
+								"{{localhost-coreliferay}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"change-password",
+								"605b0175d9b8222a8db47eb0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset-password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"passwordNew\":\"abc123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/user/reset-password/605b0175d9b8222a8db47eb0",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"reset-password",
+								"605b0175d9b8222a8db47eb0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List (Not in organization)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/admin/user/list?skip=0&limit=10&keyword=",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"list"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "keyword",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List (By organizationId)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/admin/user/list/60cb0dcd3b047b324d835504?skip=0&limit=10&keyword=",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"list",
+								"60cb0dcd3b047b324d835504"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "keyword",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/admin/user/get/6051883e2e85d71a67ca8319",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"get",
+								"6051883e2e85d71a67ca8319"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"user002\",\r\n  \"password\": \"abc123\",\r\n  \"fullName\": \"Tài khoản kiểm tra API\",\r\n  \"email\": \"user002@gmail.com\",\r\n  \"active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/user/create",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"user001\",\r\n    \"email\": \"user001@gmail.com\",\r\n    \"fullName\": \"Tài khoản kiểm tra API\",\r\n    \"jobTitle\": \"Developer\",\r\n    \"active\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/user/edit/605b0175d9b8222a8db47eb0",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"edit",
+								"605b0175d9b8222a8db47eb0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/user/delete/60cb05523b047b324d83548a",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"delete",
+								"60cb05523b047b324d83548a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User in Organizaion",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"605b0175d9b8222a8db47eb0\",\r\n    \"organizationId\": \"605b064ad9b8222a8db47eb8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/user/add-in-organization",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"add-in-organization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove User in Organization",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"605b0175d9b8222a8db47eb0\",\r\n    \"organizationId\": \"605b064ad9b8222a8db47eb8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/user/remove-in-organization",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"remove-in-organization"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Organization",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/admin/organization/list?skip=0&limit=10&keyword=",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization",
+								"list"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "keyword",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/admin/organization/get/605b064ad9b8222a8db47eb8",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization",
+								"get",
+								"605b064ad9b8222a8db47eb8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Phòng Biên tập 2\",\r\n  \"description\": \"Phòng ban trong sở công thương\",\r\n  \"parentId\": \"605bfeb9d9b8222a8db47ed8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/organization/create",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"Phòng Biên tập 3\",\r\n    \"description\": \"Phòng ban trong sở công thương\",\r\n\t\"parentId\" : \"605bfeb9d9b8222a8db47ed8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/organization/edit/60cb0dcd3b047b324d835504",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization",
+								"edit",
+								"60cb0dcd3b047b324d835504"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/organization/delete/60cb0b133b047b324d8354f1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization",
+								"delete",
+								"60cb0b133b047b324d8354f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Copy",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/organization/delete/60cb0b133b047b324d8354f1",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization",
+								"delete",
+								"60cb0b133b047b324d8354f1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Import Users",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"organizationId\": \"605b064ad9b8222a8db47eb8\",\r\n    \"userIds\": [\r\n        \"605b0175d9b8222a8db47eb0\",\r\n        \"6051883e2e85d71a67ca8319\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/organization/import-users",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization",
+								"import-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Export Users",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"organizationId\": \"605b064ad9b8222a8db47eb8\",\r\n    \"userIds\": [\r\n        \"605b0175d9b8222a8db47eb0\",\r\n        \"6051883e2e85d71a67ca8319\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/organization/export-users",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization",
+								"export-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Set leader",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/organization/set-leader/60cb0dcd3b047b324d835504?userId=605b0175d9b8222a8db47eb0",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization",
+								"set-leader",
+								"60cb0dcd3b047b324d835504"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "605b0175d9b8222a8db47eb0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unset leader",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/organization/unset-leader/60cb0dcd3b047b324d835504",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization",
+								"unset-leader",
+								"60cb0dcd3b047b324d835504"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Organization-Role",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Lãnh đạo đơn vị 1\",\r\n  \"description\": \"Lãnh đạo của đơn vị\",\r\n  \"permissionKeys\": [\"xem_nguoidung\",\"xoa_nguoidung\"],\r\n  \"userIds\": [\"605b0175d9b8222a8db47eb0\"],\r\n  \"organizationId\": \"60cb0dcd3b047b324d835504\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/organization-role/create",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization-role",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/admin/organization-role/60cb0dcd3b047b324d835504",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization-role",
+								"60cb0dcd3b047b324d835504"
+							]
+						},
+						"description": "Danh sách vai trò trong tổ chức"
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/admin/organization-role/get/60cb75533b047b324d8355fe",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization-role",
+								"get",
+								"60cb75533b047b324d8355fe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"60cb75533b047b324d8355fe\",\r\n    \"name\": \"Lãnh đạo đơn vị 1\",\r\n    \"description\": \"Lãnh đạo của đơn vị\",\r\n    \"creatorName\": \"Administrator\",\r\n    \"permissionKeys\": [\"xem_nguoidung\", \"xoa_nguoidung\"],\r\n    \"userIds\": [\"605b0175d9b8222a8db47eb0\"],\r\n    \"organizationId\": \"60cb0dcd3b047b324d835504\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/organization-role/edit",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization-role",
+								"edit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": \"60cb75533b047b324d8355fe\",\r\n    \"organizationId\": \"60cb0dcd3b047b324d835504\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/organization-role/delete",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"organization-role",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Permission",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/admin/permission/list",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"permission",
+								"list"
+							],
+							"query": [
+								{
+									"key": "permissionKeys",
+									"value": "capnhat_nguoidung,xoa_nguoidung",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/admin/permission/get/capnhat_nguoidung",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"permission",
+								"get",
+								"capnhat_nguoidung"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role Template",
+			"item": [
+				{
+					"name": "List role templates",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/admin/role-template/list?skip=0&limit=10",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"role-template",
+								"list"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "keyword",
+									"value": "viên",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a role template",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Chuyên viên\",\r\n  \"description\": \"Chuyên viên của đơn vị, cơ quan, trưởng phòng\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/role-template/create",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"role-template",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit  a role template",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Lãnh đạo đơn vị\",\r\n    \"description\": \"Lãnh đạo của đơn vị, cơ quan, trưởng phòng\",\r\n    \"permissionKeys\": [\r\n        \"xem_nguoidung\",\r\n        \"xoa_nguoidung\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain}}/admin/role-template/edit/60cc1ba03b047b324d83568c",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"role-template",
+								"edit",
+								"60cc1ba03b047b324d83568c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a role template",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbmlzdHJhdG9yIiwiaWF0IjoxNjIzOTA0NzkwLCJleHAiOjE2MjQ1MDk1OTB9.0QpcoADDBMhi7At38AyEx0thYlMaSfUX4luzo21ZH8-Hhxyj30SVLYvLHKWaBBh88T_u8CKJsXPAdfkPKkBsNg"
+							}
+						],
+						"url": {
+							"raw": "{{domain}}/admin/role-template/delete/60cc1ca73b047b324d83569f",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"admin",
+								"role-template",
+								"delete",
+								"60cc1ca73b047b324d83569f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

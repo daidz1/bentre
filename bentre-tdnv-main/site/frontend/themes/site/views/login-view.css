@@ -1,0 +1,19 @@
+[part="description"] {
+	font-weight: 500;
+	color: whitesmoke;
+}
+
+[part="backdrop"] {
+  background-image: url(../images/handle_cert.png); 
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: left bottom;
+ /*  background-size: 180px 60px; */
+  background-origin: content-box;
+  padding: 25px;
+}
+
+[part="brand"]{
+	min-height:0px !important;
+}
+

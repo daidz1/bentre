@@ -1,0 +1,23 @@
+.org-block {
+	padding: 10px;
+	box-shadow: 0px 0px 2px 1px #e0e0e0;
+	cursor: pointer;
+	margin-top: 10px;
+}
+
+.org-block:hover {
+	box-shadow: 0px 0px 2px 2px #7bb8f7;
+}
+
+.org-name {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin-bottom: 2px;
+}
+
+.org-role {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}

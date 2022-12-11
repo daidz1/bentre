@@ -1,0 +1,18 @@
+20/09/2022
+Thay tất cả norNameBoss = creatorName
+========================
+Giao nhiệm vụ từ văn bản cho cá nhân và đơn vị
+DocDetailDialog
+
+TaskCreateFromDocLayout
+TaskOrgCreateFromDocLayout
+
+TaskCreateFromDocComponent
+MultiTaskCreateFromDocLayout
+
+TaskOrgCreateFromDocComponent
+MultiOrgTaskCreateFromDocLayout
+========================
+
+
+Tao task mà có file đính kèm lâu và bị lỗi

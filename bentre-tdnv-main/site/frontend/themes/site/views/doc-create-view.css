@@ -1,0 +1,15 @@
+#doc-create-board vaadin-board-row >*{
+	padding:0px 5px;
+}
+
+#doc-create-board vaadin-board-row >*:first-child{
+	padding-left: 0px;
+}
+
+#doc-create-board vaadin-board-row >*:last-child{
+	padding-right: 0px;
+}
+
+#doc-create-board vaadin-text-field{
+	padding-top:10px !important;
+}

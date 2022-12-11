@@ -1,0 +1,8 @@
+tbody, td, tfoot, th, thead, tr {
+    vertical-align: middle;
+}
+
+#header{
+	background: #eef2f5; 
+	padding: 20px 0px;
+}

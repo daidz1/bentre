@@ -1,0 +1,191 @@
+/* 1 createdAt:22/08/2022, 12:34:33*/
+{
+	"_id" : ObjectId("63031569b9998b48fc3693f5"),
+	"key" : "xemnhiemvudonvi",
+	"name" : "Xem nhiệm vụ đơn vị",
+	"description" : "Được phép xem tất cả nhiệm vụ trong đơn vị",
+	"order" : 20,
+	"groupId" : "nhiemvu",
+	"groupName" : "Nhiệm vụ",
+	"groupOrder" : 20
+},
+
+/* 2 createdAt:22/08/2022, 12:32:50*/
+{
+	"_id" : ObjectId("63031502b9998b48fc3693f4"),
+	"key" : "xemvanbandonvi",
+	"name" : "Xem văn bản đơn vị",
+	"description" : "Được phép xem toàn bộ văn bản liên quan đến đơn vị",
+	"order" : 21,
+	"groupId" : "vanban",
+	"groupName" : "Văn bản",
+	"groupOrder" : 20
+},
+
+/* 3 createdAt:22/08/2022, 12:32:50*/
+{
+	"_id" : ObjectId("63031502b9998b48fc3693f3"),
+	"key" : "xemvanban",
+	"name" : "Xem văn bản",
+	"description" : "Được phép xem văn bản liên quan đến tài khoản (thêm bằng tay và lấy từ hệ thống IOffice)",
+	"order" : 21,
+	"groupId" : "vanban",
+	"groupName" : "Văn bản",
+	"groupOrder" : 20
+},
+
+/* 4 createdAt:22/08/2022, 12:32:50*/
+{
+	"_id" : ObjectId("63031502b9998b48fc3693f2"),
+	"key" : "themvanban",
+	"name" : "Thêm văn bản",
+	"description" : "Được phép thêm văn bản (bằng tay) vào hệ thống để giao nhiệm vụ",
+	"order" : 21,
+	"groupId" : "vanban",
+	"groupName" : "Văn bản",
+	"groupOrder" : 20
+},
+
+/* 5 createdAt:12/07/2022, 13:53:07*/
+{
+	"_id" : ObjectId("62cd1a53546ddc3a74fd8dbd"),
+	"key" : "phannhiemvudonvi",
+	"name" : "Phân nhiệm vụ đơn vị cho lãnh đạo",
+	"description" : "Phần nhiệm vụ được giao cho đơn vị nhưng chưa phân hoặc chọn tài khoản đích danh để xử lý",
+	"order" : 21,
+	"groupId" : "nhiemvudonviduocgiao",
+	"groupName" : "Nhiệm vụ đơn vị được giao",
+	"groupOrder" : 20
+},
+
+/* 6 createdAt:30/07/2021, 21:34:55*/
+{
+	"_id" : ObjectId("61040e0fa62b8d51386380ff"),
+	"key" : "khongnhanviec",
+	"name" : "Không nhận việc",
+	"description" : "Không hiển thị tài khoản trên màn hình giao việc của người giao",
+	"order" : 20,
+	"groupId" : "khongnhanviec",
+	"groupName" : "Không nhận việc",
+	"groupOrder" : 20
+},
+
+/* 7 createdAt:12/07/2021, 14:36:31*/
+{
+	"_id" : ObjectId("60ebf0ff55142a01dc9f0127"),
+	"key" : "photruongdonvi",
+	"name" : "Phó trưởng đơn vị",
+	"description" : "Phó trưởng đơn vị (bao gồm các phó lãnh đạo, phó chủ tịch, phó chánh văn phòng, phó giám đốc, phó phòng, ...), phó trưởng đơn vị thì không thể giao nhiệm vụ cho trưởng đơn vị",
+	"order" : 22,
+	"groupId" : "lanhdaodonvi",
+	"groupName" : "Lãnh đạo đơn vị",
+	"groupOrder" : 21
+},
+
+/* 8 createdAt:12/07/2021, 14:36:31*/
+{
+	"_id" : ObjectId("60ebf0ff55142a01dc9f0126"),
+	"key" : "truongdonvi",
+	"name" : "Trưởng đơn vị",
+	"description" : "Trưởng đơn vị (bao gồm lãnh đạo đầu đơn vị, chủ tịch, chánh văn phòng, giám đốc, trưởng phòng, ...)",
+	"order" : 21,
+	"groupId" : "lanhdaodonvi",
+	"groupName" : "Lãnh đạo đơn vị",
+	"groupOrder" : 21
+},
+
+/* 9 createdAt:12/07/2021, 14:36:31*/
+{
+	"_id" : ObjectId("60ebf0ff55142a01dc9f0125"),
+	"key" : "giaonhiemvu",
+	"name" : "Giao nhiệm vụ",
+	"description" : "Được phép giao nhiệm vụ (bao gồm cả việc giao thay cho lãnh đạo)",
+	"order" : 20,
+	"groupId" : "giaonhiemvu",
+	"groupName" : "Giao nhiệm vụ",
+	"groupOrder" : 20
+},
+
+/* 10 createdAt:16/06/2021, 15:42:16*/
+{
+	"_id" : ObjectId("60c9b9684a9f943e54f08b79"),
+	"key" : "capnhat_nguoidung",
+	"name" : "Cập nhật người dùng",
+	"description" : "Được phép cập nhật người dùng",
+	"order" : 4,
+	"groupId" : "nguoidung",
+	"groupName" : "Người dùng",
+	"groupOrder" : 4
+},
+
+/* 11 createdAt:16/06/2021, 15:42:16*/
+{
+	"_id" : ObjectId("60c9b9684a9f943e54f08b78"),
+	"key" : "xoa_nguoidung",
+	"name" : "Xóa người dùng",
+	"description" : "Được phép xóa người dùng",
+	"order" : 3,
+	"groupId" : "nguoidung",
+	"groupName" : "Người dùng",
+	"groupOrder" : 4
+},
+
+/* 12 createdAt:16/06/2021, 15:42:16*/
+{
+	"_id" : ObjectId("60c9b9684a9f943e54f08b77"),
+	"key" : "them_nguoidung",
+	"name" : "Thêm người dùng",
+	"description" : "Được phép thêm người dùng",
+	"order" : 2,
+	"groupId" : "nguoidung",
+	"groupName" : "Người dùng",
+	"groupOrder" : 4
+},
+
+/* 13 createdAt:16/06/2021, 15:42:16*/
+{
+	"_id" : ObjectId("60c9b9684a9f943e54f08b76"),
+	"key" : "xem_nguoidung",
+	"name" : "Xem danh sách người dùng",
+	"description" : "Được phép xem danh sách người dùng",
+	"order" : 1,
+	"groupId" : "nguoidung",
+	"groupName" : "Người dùng",
+	"groupOrder" : 4
+},
+
+/* 14 createdAt:16/06/2021, 15:42:16*/
+{
+	"_id" : ObjectId("60c9b9684a9f943e54f08b75"),
+	"key" : "quanly_vaitro",
+	"name" : "Quản lý vai trò",
+	"description" : "Được phép xem, thêm, xóa, sửa vai trò",
+	"order" : 1,
+	"groupId" : "quanlyvaitro",
+	"groupName" : "Quản lý vai trò",
+	"groupOrder" : 3
+},
+
+/* 15 createdAt:16/06/2021, 15:42:16*/
+{
+	"_id" : ObjectId("60c9b9684a9f943e54f08b74"),
+	"key" : "quanly_donvi",
+	"name" : "Quản lý đơn vị",
+	"description" : "Được phép xem, thêm, xóa, sửa đơn vị",
+	"order" : 1,
+	"groupId" : "quanlydonvi",
+	"groupName" : "Quản lý đơn vị",
+	"groupOrder" : 2
+},
+
+/* 16 createdAt:16/06/2021, 15:42:16*/
+{
+	"_id" : ObjectId("60c9b9684a9f943e54f08b73"),
+	"key" : "quanly_nguoidung",
+	"name" : "Quản lý người dùng",
+	"description" : "Được phép xem, thêm, xóa, sửa người dùng",
+	"order" : 1,
+	"groupId" : "quanlynguoidung",
+	"groupName" : "Quản lý người dùng",
+	"groupOrder" : 1
+}

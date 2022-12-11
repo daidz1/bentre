@@ -1,0 +1,282 @@
+package vn.com.ngn.site.dialog.doc;
+
+import java.io.IOException;
+
+import com.google.gson.JsonObject;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.button.ButtonVariant;
+import com.vaadin.flow.component.html.H4;
+import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.splitlayout.SplitLayout;
+
+import vn.com.ngn.site.dialog.DialogTemplate;
+import vn.com.ngn.site.enums.DocTypeEnum;
+import vn.com.ngn.site.enums.NotificationTypeEnum;
+import vn.com.ngn.site.form.DocCreateForm;
+import vn.com.ngn.site.util.SessionUtil;
+import vn.com.ngn.site.util.component.HeaderUtil;
+import vn.com.ngn.site.util.component.NotificationUtil;
+import vn.com.ngn.site.util.service.DocServiceUtil;
+import vn.com.ngn.site.views.doclist.component.DocAttachmentComponent;
+import vn.com.ngn.site.views.doclist.component.DocDetailInfoComponent;
+import vn.com.ngn.site.views.doclist.component.DocInfoComponent;
+import vn.com.ngn.site.views.doclist.component.TaskCreateFromDocComponent;
+import vn.com.ngn.site.views.doclist.component.TaskListOfDocComponent;
+import vn.com.ngn.site.views.doclist.component.TaskOrgCreateFromDocComponent;
+
+@SuppressWarnings("serial")
+public class DocDetailDialog extends DialogTemplate{
+	private HorizontalLayout hAction = new HorizontalLayout();
+	//Dzung code
+	private Button btnUpdateDoc = new Button("Cập nhật văn bản",VaadinIcon.EDIT.create());
+	private Button btnCreateOrgTask = new Button("Giao nhiệm vụ cơ quan/đơn vị",VaadinIcon.ARROW_FORWARD.create());
+	//end Dzung code
+	private Button btnCreateTask = new Button("Giao nhiệm vụ cá nhân",VaadinIcon.ARROW_FORWARD.create());
+
+
+	private SplitLayout splitLayout = new SplitLayout();
+	private VerticalLayout vLeft = new VerticalLayout();
+	private VerticalLayout vDocInfo = new VerticalLayout();
+	private DocDetailInfoComponent docInfo;
+	private HorizontalLayout captionDocInfo = HeaderUtil.createHeader5WithBackground(VaadinIcon.INFO.create(),"Thông tin văn bản","rgb(14 89 183)","rgb(14 89 183 / 9%)");
+	private HorizontalLayout captionDocAttachment = HeaderUtil.createHeader5WithBackground(VaadinIcon.FILE_TEXT.create(),"Đính kèm văn bản","rgb(101, 95, 89)","rgb(101 95 89/ 12%)");
+	private VerticalLayout vDocAttachment = new VerticalLayout();
+	private DocAttachmentComponent docAttachmentLayout;
+
+	private VerticalLayout vRight = new VerticalLayout();
+
+	private VerticalLayout vTaskList = new VerticalLayout();
+	private HorizontalLayout captionTaskList = HeaderUtil.createHeader5WithBackground(VaadinIcon.LIST.create(),"Danh sách nhiệm vụ đã giao từ văn bản","rgb(162 27 58)","rgb(162 27 58 / 9%)");
+	private TaskListOfDocComponent taskListLayout;
+	private TaskCreateFromDocComponent taskCreateLayout;
+	//Dzung code
+	private TaskOrgCreateFromDocComponent taskCreateOrgLayout;
+	//end Dzung code
+
+	private JsonObject jsonDoc = new JsonObject();
+
+	public DocDetailDialog(JsonObject jsonDoc) {
+		System.out.println("=====DocDetailDialog=====");
+		this.jsonDoc = jsonDoc;
+		System.out.println(jsonDoc);
+
+		buildLayout();
+		configComponent();
+
+	}
+
+	@Override
+	public void buildLayout() {
+		super.buildLayout();
+
+		caption.setText("Thông tin văn bản");
+
+		this.add(hAction);
+		this.add(splitLayout);
+
+		this.setSizeFull();
+
+		buildAction();
+		buildInfoLayout();
+		System.out.println("Doc Id:"+jsonDoc.get("id").getAsString());
+	}
+
+	@Override
+	public void configComponent() {
+		super.configComponent();
+
+		//		btnUpdateDoc.addClickListener(e->{
+		//			DocEditDialog dialog = new DocEditDialog();
+		//			
+		//			dialog.open();
+		//		});
+
+		//Dzung code
+		btnUpdateDoc.addClickListener(e1->{
+			DialogTemplate dialog = new DialogTemplate();
+			dialog.setCaption(new H4("Cập nhật văn bản"));
+			dialog.buildLayout();
+			dialog.configComponent();
+			DocTypeEnum eType=null;;
+			for(DocTypeEnum ee : DocTypeEnum.values()) {
+				if(this.jsonDoc.get("docCategory").getAsString().equals(ee.getKey())) {
+					eType = ee;
+				}
+			}
+			DocCreateForm form = new DocCreateForm(jsonDoc, eType);
+			form.setDialog(dialog);
+			dialog.add(form);
+			dialog.open();
+			dialog.addOpenedChangeListener(e->{
+				if(dialog.isOpened()==false) {
+					rebuildLeftLayout();
+				}
+			});
+
+		});
+		if(this.jsonDoc.get("docFrom").getAsString().equals(SessionUtil.getUser().getAccountDomino())) {
+			btnUpdateDoc.setVisible(true);
+		}else {
+			btnUpdateDoc.setVisible(false);
+		}
+		
+		btnCreateOrgTask.addClickListener(e->{
+			vTaskList.setVisible(false);
+			taskCreateLayout.setVisible(false);
+			taskCreateOrgLayout.setVisible(true);
+		});
+		taskCreateOrgLayout.getBtnCancel().addClickListener(e->{
+			vTaskList.setVisible(true);
+			taskCreateLayout.setVisible(false);
+			taskCreateOrgLayout.setVisible(false);
+		});
+		
+		taskCreateOrgLayout.getBtnTrigger().addClickListener(e4->{
+			vTaskList.setVisible(true);
+			taskCreateLayout.setVisible(false);
+
+			try {
+				taskListLayout.loadData();
+			} catch (IOException e5) {
+				e5.printStackTrace();
+			}
+		});
+		//end Dzung code
+
+		btnCreateTask.addClickListener(e->{
+			vTaskList.setVisible(false);
+			taskCreateOrgLayout.setVisible(false);
+			taskCreateLayout.setVisible(true);
+		});
+
+		taskCreateLayout.getBtnCancel().addClickListener(e->{
+			vTaskList.setVisible(true);
+			taskCreateLayout.setVisible(false);
+			taskCreateOrgLayout.setVisible(false);
+		});
+
+		taskCreateLayout.getBtnTrigger().addClickListener(e4->{
+			vTaskList.setVisible(true);
+			taskCreateLayout.setVisible(false);
+			taskCreateOrgLayout.setVisible(false);
+			try {
+				taskListLayout.loadData();
+			} catch (IOException e5) {
+				e5.printStackTrace();
+			}
+		});
+		
+		//Dzung code
+		taskCreateOrgLayout.getBtnTrigger().addClickListener(e4->{
+			vTaskList.setVisible(true);
+			taskCreateLayout.setVisible(false);
+			taskCreateOrgLayout.setVisible(false);
+			try {
+				taskListLayout.loadData();
+			} catch (IOException e5) {
+				e5.printStackTrace();
+			}
+		});
+		//end Dzung code
+	}
+
+	private void buildAction() {
+		hAction.add(btnCreateTask,btnCreateOrgTask, btnUpdateDoc);
+
+//		btnCreateTask.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
+
+		hAction.getStyle().set("margin-left", "10px");
+	}
+
+	private void buildInfoLayout() {
+		splitLayout.addToPrimary(vLeft);
+		splitLayout.addToSecondary(vRight);
+
+		splitLayout.setSplitterPosition(55);
+		splitLayout.setMinHeight("100%");
+
+		splitLayout.setWidthFull();
+
+		buildLeftLayout();
+		buildRightLayout();
+		vRight.setWidthFull();
+	}
+
+	private void buildLeftLayout() {
+		vLeft.add(vDocInfo);
+		vLeft.add(vDocAttachment);
+
+		vLeft.setWidthFull();
+		vLeft.setMinHeight("100%");
+
+		vDocInfo.setWidthFull();
+		vDocInfo.setPadding(false);
+		vDocInfo.addClassName("detail-docinfo");
+
+		vDocAttachment.setWidthFull();
+		vDocAttachment.setPadding(false);
+		vDocAttachment.addClassName("detail-docinfo");
+
+		buildDocInfo();
+		buildDocAttachment();
+	}
+
+	private void buildRightLayout() {
+		taskListLayout = new TaskListOfDocComponent(jsonDoc.get("id").getAsString());
+		taskCreateLayout = new TaskCreateFromDocComponent(jsonDoc);
+		taskCreateOrgLayout =new TaskOrgCreateFromDocComponent(jsonDoc);
+
+		vRight.add(vTaskList);
+		vRight.add(taskCreateLayout);
+		vRight.add(taskCreateOrgLayout);
+
+		vTaskList.add(captionTaskList);
+		vTaskList.add(taskListLayout);
+
+		taskCreateLayout.setVisible(false);
+		//Dzung code
+		taskCreateOrgLayout.setVisible(false);
+		//end Dzung code
+
+		vTaskList.setPadding(false);
+
+		vRight.setWidthFull();
+	}
+
+	public void rebuildLeftLayout() {
+		try {
+			JsonObject jsonDocOld = jsonDoc;
+			JsonObject jsonResponse = DocServiceUtil.getDocDetail(jsonDoc.get("id").getAsString());
+			if(jsonResponse.get("status").getAsInt()==200) {
+				jsonDoc = jsonResponse.getAsJsonObject("result");
+
+				vDocInfo.removeAll();
+				vDocAttachment.removeAll();
+				buildDocInfo();
+				buildDocAttachment();
+			} else {
+				System.out.println(jsonResponse.get("message").getAsString());
+				NotificationUtil.showNotifi("Có lỗi xảy ra, vui lòng thử lại sau!", NotificationTypeEnum.ERROR);
+			}
+		} catch (IOException e1) {
+			e1.printStackTrace();
+			NotificationUtil.showNotifi("Có lỗi xảy ra, vui lòng thử lại sau!", NotificationTypeEnum.ERROR);
+		}
+	}
+
+	private void buildDocInfo() {
+		docInfo = new DocDetailInfoComponent(jsonDoc);
+
+		vDocInfo.add(captionDocInfo);
+		vDocInfo.add(docInfo);
+	}
+
+	private void buildDocAttachment() {
+		docAttachmentLayout = new DocAttachmentComponent(true,jsonDoc.getAsJsonArray("docAttachments"));
+
+		vDocAttachment.add(captionDocAttachment);
+		vDocAttachment.add(docAttachmentLayout);
+	}
+}

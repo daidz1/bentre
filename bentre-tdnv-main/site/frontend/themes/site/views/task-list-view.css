@@ -1,0 +1,264 @@
+.task-block {
+	background: #fff;
+	box-shadow: 1px 1px 4px 2px #dadada;
+	font-size: var(--lumo-font-size-m);
+	border-radius: 13px;
+	color: #213854;
+	margin-bottom: 10px;
+}
+
+.task-block .row {
+	padding: 5px 5px;
+}
+
+.task-block .row[role='user-assign'] {
+	/* background: #2d74de47;
+    color: #154c9e; */
+	color: rgb(43, 95, 173);
+	border-radius: 14px 14px 0 0;
+	font-weight: 500;
+	border-radius: 14px 14px 0 0;
+}
+
+.task-block .row[role='action'] {
+	margin-top: 5px;
+}
+
+.task-block .user-owner {
+	font-weight: 500;
+	padding: 5px 12px;
+	background: #f7eaed;
+	color: rgb(162, 27, 58);
+	border-radius: 10px;
+}
+
+.task-block .user-assign {
+	padding: 5px 12px;
+	background: #1e5ebf1a;
+	color: #1e5ebf;
+	border-radius: 10px;
+}
+
+.task-block .user-support {
+	color: #2da757;
+	font-weight: 500;
+	display: inline-block;
+	margin-right: 10px;
+	background: #39ab612b;
+	padding: 4px 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	font-size: var(--lumo-font-size-s);
+}
+
+.caption-head {
+	display: inline-block;
+	width: 105px;
+	vertical-align: top;
+}
+
+.action-priority {
+	padding: 3px 11px;
+	border-radius: 28px;
+	font-weight: 500;
+}
+
+.action-priority[priority='1'] {
+	background: #244ec31f;
+	color: #244ec3;
+}
+
+.action-priority[priority='2'] {
+	background: #ffa50033;
+	color: #e29508;
+}
+
+.action-priority[priority='3'] {
+	background: #ff000021;
+	color: red;
+}
+
+.action-priority, .action-progress, .action-commnet, .action-attachment, .action-subtask,
+	.action-detail {
+	padding: 3px 11px;
+	border-radius: 28px;
+	font-weight: 500;
+	cursor: pointer;
+	font-size: var(--lumo-font-size-s);
+}
+
+.action-progress {
+	background: #2080901c;
+	color: #208090;
+}
+
+.action-progress:hover {
+	box-shadow: 0px 0px 2px 1px rgb(32 128 144/ 60%);
+}
+
+.action-commnet {
+	background: rgb(159 179 52/ 14%);
+	color: rgb(137, 154, 47);
+}
+
+.action-commnet:hover {
+	box-shadow: 0px 0px 2px 1px rgb(159 179 52/ 60%);
+}
+
+.action-attachment {
+	background: rgb(101 95 89/ 12%);
+	color: rgb(101, 95, 89);
+}
+
+.action-attachment:hover {
+	box-shadow: 0px 0px 2px 1px rgb(101 95 89/ 60%);
+}
+
+.action-subtask {
+	background: rgb(53 57 54/ 7%);
+	color: rgb(56, 55, 55);
+}
+
+.action-subtask:hover {
+	box-shadow: 0px 0px 2px 1px rgb(56 55 55/ 31%);
+}
+
+.action-detail {
+	background: rgb(34, 100, 199);
+	color: rgb(255, 255, 255);
+}
+
+.action-detail:hover {
+	box-shadow: 0px 0px 2px 2px rgb(34 100 199/ 41%);
+}
+
+/* detail css*/
+.detail-taskinfo, .detail-taskattachment, .detail-taskprogress,
+	.detail-taskcomment {
+	box-shadow: rgb(228, 228, 228) 0px 1px 4px 2px;
+	background: #fff;
+	border-radius: 14px;
+	padding: 15px;
+}
+
+.user-display {
+	box-shadow: rgb(228, 228, 228) 0px 1px 4px 2px;
+	border-radius: 11px;
+	background: #fff;
+}
+
+.user-display .info-block {
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	font-size: var(--lumo-font-size-m);
+}
+
+.commnet-block {
+	
+}
+
+.comment-wrap {
+	padding-top: 0px;
+}
+
+.comment-content {
+	background: #f0f2f5;
+	margin: 0;
+	padding: 7px 15px;
+	border-radius: 15px;
+}
+
+.comment-name {
+	margin: 0;
+}
+
+.comment-reply-button {
+	font-weight: 500;
+	color: #707277;
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+.commnet-time {
+	font-size: var(--lumo-font-size-s);
+	color: #9d96a7;
+}
+
+.event-block {
+	margin-bottom: 10px;
+}
+
+.event-content-block {
+	color: rgb(53, 53, 53);
+	font-size: var(--lumo-font-size-m);
+	padding: 10px 20px;
+	cursor: pointer;
+	box-shadow: 0px 0px 3px 2px #e4e4e4;
+	border-radius: 13px;
+}
+
+.event-title {
+	font-weight: 500;
+}
+
+.event-icon {
+	background: #6175a2;
+	padding: 9px 10px;
+	border-radius: 32px;
+	color: #fff;
+	border-radius: 20px;
+}
+
+.vLayout-tree-parent {
+	width: unset !important;
+}
+
+.vLayout-tree-parent-line {
+	border-left: 1px solid rgb(214, 214, 214);
+	/*  border-radius: 0px 0px 0px 24px; */
+}
+
+.vLayout-tree-parent .assignee {
+	font-weight: 500;
+	color: #1e5ebf;
+	font-size: var(--lumo-font-size-m);
+}
+.vLayout-tree-parent .assignee-org {
+	font-weight: 500;
+	color: red;
+	font-size: var(--lumo-font-size-s);
+}
+
+.vLayout-tree-parent .createtime {
+	font-style: italic;
+}
+
+.vLayout-tree-parent .block {
+	padding-top: 10px;
+}
+
+.vLayout-tree-parent .block-line {
+	width: 50px;
+	height: 20px;
+	border-bottom: 1px solid rgb(214, 214, 214);
+	/* border-radius: 0px 0px 0px 20px; */
+}
+
+.vLayout-tree-parent .vTask-block {
+	background: #fff;
+	box-shadow: 1px 1px 4px 2px #dadada;
+	font-size: var(--lumo-font-size-m);
+	border-radius: 13px;
+	color: #213854;
+	padding: 10px 9px;
+}
+
+.vLayout-tree-parent .title {
+	font-weight: 500;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 100%;
+}

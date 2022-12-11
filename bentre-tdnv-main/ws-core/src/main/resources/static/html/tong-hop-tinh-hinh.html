@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/html/favicon.ico">
+		<title>Tổng hợp tình hình</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="/html/vender/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+		
+		<!-- My CSS -->
+		<link rel="stylesheet" href="/html/css/tong-hop-tinh-hinh.css">
+		
+		<!-- Icons -->
+		<link rel="stylesheet" href="/html/vender/bootstrap-icons-1.9.1/bootstrap-icons.css">
+	</head>
+	<body>
+		<div id="header">
+			<div class="container-fluid">
+				<div style="text-align: center; font-size: 16px; font-weight: bold; color: red; text-transform: uppercase;">Tổng hợp tình hình, kết quả thực hiện nhiệm vụ của UBND tỉnh, Chủ tịch UBND tỉnh giao trên hệ thống thông tin chỉ đạo điều hành của UBND tỉnh, Chủ tịch UBND tỉnh</div>
+				<div style="text-align: center; color: blue;">Theo khoản 2 Điều 15 Quy chế Theo dõi, đôn đốc, kiểm tra việc thực hiện nhiệm vụ do Ủy ban nhân dân tỉnh, Chủ tịch Ủy ban nhân dân tỉnh giao của Quyết định số 09/2020/QĐ-UBND ngày 13 tháng 3 năm 2020 của Ủy ban nhân dân tỉnh Bến Tre</div>
+			</div>
+		</div>
+
+		<div id="control">
+			<div class="" align="center" style="margin:5px;">
+				<label for="select-year" class="form-label">Year:</label>
+				<select id="select-year" name="select-year">
+					<option>2022</option>
+					<option>2021</option>
+					<option>2020</option>
+				</select>
+			</div>
+		</div>
+
+		<div id="content">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+						<div id="bieu-do-1">
+							<div style="text-align: center; font-weight: 600; color: #0c679b; margin-bottom: 10px;">Biểu đồ tổng hợp tình hình, kết quả thực hiện nhiệm vụ<br>của UBND tỉnh, Chủ tịch UBND tỉnh giao theo tháng</div>
+							<div>
+								<figure class="highcharts-figure">
+								    <div id="chart-1"></div>
+								</figure>
+							</div>
+						</div>
+
+						<br><br>
+						<div id="bieu-do-2">
+							<div style="text-align: center; font-weight: 600; color: #0c679b; margin-bottom: 10px;">Biểu đồ tổng hợp tình hình, kết quả thực hiện nhiệm vụ<br>của UBND tỉnh, Chủ tịch UBND tỉnh giao theo trạng thái xử lý</div>
+							<div>
+								<div class="card">
+									<div class="card-body">
+										<h5 class="card-title">NHIỆM VỤ CHƯA HOÀN THÀNH (830)</h5>
+										<div class="row">
+											<div class="col-md-4">
+												<div class="card">
+													<div class="card-body" align="center">
+														<h5 class="card-title text-success">123</h5>
+														<p class="card-text">Chưa hoàn thành trong hạn (12.53%)</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="card">
+													<div class="card-body" align="center">
+														<h5 class="card-title text-danger">123</h5>
+														<p class="card-text">Chưa hoàn thành quá hạn (12.53%)</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="card">
+													<div class="card-body" align="center">
+														<h5 class="card-title text-info">123</h5>
+														<p class="card-text">Chưa hoàn thành không hạn (12.53%)</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div style="margin-top: 15px;">
+											<figure class="highcharts-figure">
+											    <div id="chart-2"></div>
+											</figure>
+										</div>
+										
+									</div>
+								</div>
+
+								<br>
+								<div class="card">
+									<div class="card-body">
+										<h5 class="card-title">NHIỆM VỤ ĐÃ HOÀN THÀNH (830)</h5>
+										<div class="row">
+											<div class="col-md-4">
+												<div class="card">
+													<div class="card-body" align="center">
+														<h5 class="card-title text-success">123</h5>
+														<p class="card-text">Đã hoàn thành trong hạn (12.53%)</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="card">
+													<div class="card-body" align="center">
+														<h5 class="card-title text-danger">123</h5>
+														<p class="card-text">Đã hoàn thành quá hạn (12.53%)</p>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="card">
+													<div class="card-body" align="center">
+														<h5 class="card-title text-info">123</h5>
+														<p class="card-text">Đã hoàn thành không hạn (12.53%)</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div style="margin-top: 15px;">
+											<figure class="highcharts-figure">
+											    <div id="chart-3"></div>
+											</figure>
+										</div>
+										
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+
+
+					</div>
+					<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+						<div style="text-align: center; color: #0c679b; font-weight: 600;">Nhiệm vụ do UBND tỉnh, Chủ tịch UBND giao cho các cơ quan, đơn vị thực hiện</div>
+						<table class="table table-bordered"><tbody><tr style="text-align: center; font-weight: bold;"><td rowspan="3">STT</td><td rowspan="3">Tên đơn vị</td><td colspan="7">Từ ngày <span style="color:red">01-01-2021</span> đến <span style="color:red">26-09-2022</span></td></tr><tr style="text-align: center; font-weight: bold;"><td rowspan="2" style="background: #eef2f5">Tổng nhiệm vụ</td><td colspan="3">Đã hoàn thành<br><span style="color:red">(5456)</span></td><td colspan="3">Chưa hoàn thành<br><span style="color:red">(1287)<span></span></span></td></tr><tr style="text-align: center; font-weight: bold;"><td>Trong hạn</td><td>Quá hạn</td><td>Không hạn</td><td>Trong hạn</td><td>Quá hạn</td><td>Không hạn</td></tr><tr style="text-align: center;"><td>1</td><td style="text-align: left">Sở Nội vụ</td><td style="background: #eef2f5">226</td><td>106</td><td>48</td><td>63</td><td>2</td><td>0</td><td>7</td></tr><tr style="text-align: center;"><td>2</td><td style="text-align: left">Sở Tư pháp</td><td style="background: #eef2f5">161</td><td>46</td><td>35</td><td>49</td><td>6</td><td>1</td><td>24</td></tr><tr style="text-align: center;"><td>3</td><td style="text-align: left">Sở Kế hoạch và Đầu tư</td><td style="background: #eef2f5">413</td><td>106</td><td>128</td><td>167</td><td>0</td><td>0</td><td>12</td></tr><tr style="text-align: center;"><td>4</td><td style="text-align: left">Sở Tài chính</td><td style="background: #eef2f5">540</td><td>225</td><td>61</td><td>244</td><td>3</td><td>0</td><td>7</td></tr><tr style="text-align: center;"><td>5</td><td style="text-align: left">Sở Công Thương</td><td style="background: #eef2f5">163</td><td>60</td><td>12</td><td>37</td><td>3</td><td>0</td><td>51</td></tr><tr style="text-align: center;"><td>6</td><td style="text-align: left">Sở Nông nghiệp và PTNT</td><td style="background: #eef2f5">677</td><td>192</td><td>70</td><td>298</td><td>13</td><td>1</td><td>103</td></tr><tr style="text-align: center;"><td>7</td><td style="text-align: left">Sở Giao thông Vận tải</td><td style="background: #eef2f5">208</td><td>43</td><td>52</td><td>80</td><td>5</td><td>6</td><td>22</td></tr><tr style="text-align: center;"><td>8</td><td style="text-align: left">Sở Xây Dựng</td><td style="background: #eef2f5">245</td><td>120</td><td>28</td><td>88</td><td>5</td><td>0</td><td>4</td></tr><tr style="text-align: center;"><td>9</td><td style="text-align: left">Sở Tài nguyên và Môi trường</td><td style="background: #eef2f5">318</td><td>74</td><td>79</td><td>143</td><td>11</td><td>2</td><td>9</td></tr><tr style="text-align: center;"><td>10</td><td style="text-align: left">Sở Thông tin và Truyền thông</td><td style="background: #eef2f5">279</td><td>94</td><td>36</td><td>134</td><td>3</td><td>0</td><td>12</td></tr><tr style="text-align: center;"><td>11</td><td style="text-align: left">Sở Lao động - TB và XH</td><td style="background: #eef2f5">239</td><td>121</td><td>14</td><td>90</td><td>2</td><td>0</td><td>12</td></tr><tr style="text-align: center;"><td>12</td><td style="text-align: left">Sở Văn hóa Thể thao và Du lịch</td><td style="background: #eef2f5">111</td><td>47</td><td>5</td><td>58</td><td>0</td><td>0</td><td>1</td></tr><tr style="text-align: center;"><td>13</td><td style="text-align: left">Sở Khoa học và Công nghệ</td><td style="background: #eef2f5">147</td><td>31</td><td>44</td><td>52</td><td>2</td><td>3</td><td>15</td></tr><tr style="text-align: center;"><td>14</td><td style="text-align: left">Sở Giáo dục và Đào tạo</td><td style="background: #eef2f5">169</td><td>63</td><td>21</td><td>77</td><td>0</td><td>3</td><td>5</td></tr><tr style="text-align: center;"><td>15</td><td style="text-align: left">Sở Y tế</td><td style="background: #eef2f5">149</td><td>24</td><td>29</td><td>46</td><td>3</td><td>16</td><td>31</td></tr><tr style="text-align: center;"><td>16</td><td style="text-align: left">Thanh tra tỉnh</td><td style="background: #eef2f5">158</td><td>87</td><td>4</td><td>55</td><td>8</td><td>0</td><td>4</td></tr><tr style="text-align: center;"><td>17</td><td style="text-align: left">Văn phòng UBND tỉnh</td><td style="background: #eef2f5">71</td><td>16</td><td>9</td><td>8</td><td>1</td><td>0</td><td>37</td></tr><tr style="text-align: center;"><td>18</td><td style="text-align: left">Công an tỉnh</td><td style="background: #eef2f5">186</td><td>42</td><td>29</td><td>1</td><td>5</td><td>17</td><td>92</td></tr><tr style="text-align: center;"><td>19</td><td style="text-align: left">Bộ Chỉ huy Quân sự tỉnh</td><td style="background: #eef2f5">105</td><td>17</td><td>27</td><td>11</td><td>2</td><td>1</td><td>47</td></tr><tr style="text-align: center;"><td>20</td><td style="text-align: left">Bộ Chỉ huy Bộ đội biên phòng tỉnh</td><td style="background: #eef2f5">115</td><td>36</td><td>16</td><td>61</td><td>1</td><td>0</td><td>1</td></tr><tr style="text-align: center;"><td>21</td><td style="text-align: left">BQL DA ĐTXD các công trình DD&amp;CN</td><td style="background: #eef2f5">41</td><td>12</td><td>7</td><td>21</td><td>0</td><td>0</td><td>1</td></tr><tr style="text-align: center;"><td>22</td><td style="text-align: left">BQL DA ĐTXD các công trình NN&amp;PTNT</td><td style="background: #eef2f5">32</td><td>7</td><td>5</td><td>19</td><td>0</td><td>0</td><td>1</td></tr><tr style="text-align: center;"><td>23</td><td style="text-align: left">BQL DA ĐTXD các công trình Giao thông</td><td style="background: #eef2f5">38</td><td>12</td><td>4</td><td>11</td><td>0</td><td>0</td><td>11</td></tr><tr style="text-align: center;"><td>24</td><td style="text-align: left">Ban Quản Lý Các Khu Công Nghiệp</td><td style="background: #eef2f5">42</td><td>2</td><td>3</td><td>4</td><td>1</td><td>11</td><td>21</td></tr><tr style="text-align: center;"><td>25</td><td style="text-align: left">Kho bạc NNVNCN tỉnh</td><td style="background: #eef2f5">9</td><td>0</td><td>2</td><td>0</td><td>1</td><td>2</td><td>4</td></tr><tr style="text-align: center;"><td>26</td><td style="text-align: left">Ngân hàng NNVNCN tỉnh</td><td style="background: #eef2f5">25</td><td>10</td><td>4</td><td>10</td><td>0</td><td>0</td><td>1</td></tr><tr style="text-align: center;"><td>27</td><td style="text-align: left">Bảo hiểm xã hội tỉnh</td><td style="background: #eef2f5">17</td><td>7</td><td>2</td><td>8</td><td>0</td><td>0</td><td>0</td></tr><tr style="text-align: center;"><td>28</td><td style="text-align: left">Cục Thống kê tỉnh</td><td style="background: #eef2f5">23</td><td>4</td><td>8</td><td>8</td><td>1</td><td>2</td><td>0</td></tr><tr style="text-align: center;"><td>29</td><td style="text-align: left">Cục Thuế tỉnh</td><td style="background: #eef2f5">45</td><td>20</td><td>12</td><td>12</td><td>1</td><td>0</td><td>0</td></tr><tr style="text-align: center;"><td>30</td><td style="text-align: left">Cục Quản lý thị trường</td><td style="background: #eef2f5">21</td><td>6</td><td>3</td><td>11</td><td>1</td><td>0</td><td>0</td></tr><tr style="text-align: center;"><td>31</td><td style="text-align: left">Tòa án tỉnh</td><td style="background: #eef2f5">14</td><td>3</td><td>2</td><td>8</td><td>1</td><td>0</td><td>0</td></tr><tr style="text-align: center;"><td>32</td><td style="text-align: left">Viện kiểm sát nhân dân tỉnh</td><td style="background: #eef2f5">10</td><td>0</td><td>0</td><td>0</td><td>1</td><td>3</td><td>6</td></tr><tr style="text-align: center;"><td>33</td><td style="text-align: left">Cục Thi hành án Dân sự tỉnh</td><td style="background: #eef2f5">20</td><td>4</td><td>5</td><td>9</td><td>1</td><td>0</td><td>1</td></tr><tr style="text-align: center;"><td>34</td><td style="text-align: left">Chi cục hải quan tỉnh</td><td style="background: #eef2f5">21</td><td>14</td><td>1</td><td>1</td><td>2</td><td>0</td><td>3</td></tr><tr style="text-align: center;"><td>35</td><td style="text-align: left">Ban Thi đua Khen thưởng - Sở Nội vụ</td><td style="background: #eef2f5">19</td><td>13</td><td>4</td><td>1</td><td>0</td><td>1</td><td>0</td></tr><tr style="text-align: center;"><td>36</td><td style="text-align: left">Văn phòng Điều phối chương trình xây dựng Nông thôn mới</td><td style="background: #eef2f5">19</td><td>5</td><td>7</td><td>4</td><td>1</td><td>0</td><td>2</td></tr><tr style="text-align: center;"><td>37</td><td style="text-align: left">Liên minh Hợp tác xã tỉnh</td><td style="background: #eef2f5">55</td><td>6</td><td>3</td><td>44</td><td>0</td><td>1</td><td>1</td></tr><tr style="text-align: center;"><td>38</td><td style="text-align: left">UBND huyện Giồng Trôm</td><td style="background: #eef2f5">178</td><td>24</td><td>6</td><td>124</td><td>1</td><td>3</td><td>20</td></tr><tr style="text-align: center;"><td>39</td><td style="text-align: left">UBND huyện Chợ Lách</td><td style="background: #eef2f5">170</td><td>7</td><td>18</td><td>57</td><td>4</td><td>2</td><td>82</td></tr><tr style="text-align: center;"><td>40</td><td style="text-align: left">UBND huyện Bình Đại</td><td style="background: #eef2f5">188</td><td>23</td><td>7</td><td>114</td><td>2</td><td>1</td><td>41</td></tr><tr style="text-align: center;"><td>41</td><td style="text-align: left">UBND huyện Mỏ Cày Bắc</td><td style="background: #eef2f5">164</td><td>6</td><td>14</td><td>77</td><td>2</td><td>7</td><td>58</td></tr><tr style="text-align: center;"><td>42</td><td style="text-align: left">UBND huyện Ba Tri</td><td style="background: #eef2f5">188</td><td>1</td><td>7</td><td>9</td><td>8</td><td>18</td><td>145</td></tr><tr style="text-align: center;"><td>43</td><td style="text-align: left">UBND huyện Châu Thành</td><td style="background: #eef2f5">190</td><td>9</td><td>20</td><td>93</td><td>6</td><td>3</td><td>59</td></tr><tr style="text-align: center;"><td>44</td><td style="text-align: left">UBND huyện Thạnh Phú</td><td style="background: #eef2f5">184</td><td>21</td><td>9</td><td>119</td><td>2</td><td>2</td><td>31</td></tr><tr style="text-align: center;"><td>45</td><td style="text-align: left">UBND Thành phố Bến Tre</td><td style="background: #eef2f5">186</td><td>24</td><td>15</td><td>119</td><td>1</td><td>0</td><td>27</td></tr><tr style="text-align: center;"><td>46</td><td style="text-align: left">UBND huyện Mỏ Cày Nam</td><td style="background: #eef2f5">164</td><td>9</td><td>14</td><td>83</td><td>1</td><td>3</td><td>54</td></tr><tr style="text-align: center; font-weight: bold;"><td colspan="2"><span style="color:red">Tổng</span></td><td><span style="background: #eef2f5; color:red">6743</span></td><td>1799</td><td>929</td><td>2728</td><td>113</td><td>109</td><td>1065</td></tr></tbody></table>
+						<div align="center">
+							<button type="button" class="btn btn-primary"><i class="bi bi-cloud-download"></i> Xuất bảng biểu</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- jQuery -->
+		<script src="/html/js/jquery.min.js"></script>
+		
+		<!-- Bootstrap JavaScript -->
+		<script src="/html/vender/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+
+		<!-- High chart -->
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script src="https://code.highcharts.com/modules/export-data.js"></script>
+		<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+		<script type="text/javascript">
+			Highcharts.chart('chart-1', {
+			    chart: {
+			        type: 'column'
+			    },
+			    title: {
+			        align: 'center',
+			        text: ''
+			    },
+			    xAxis: {
+			        categories: ['01', '02', '03', '04', '05', '06', '07', '07', '09', '10', '11', '12']
+			    },
+			    yAxis: {
+			        min: 0,
+			        title: {
+			            text: 'Số lượng nhiệm vụ'
+			        },
+			        stackLabels: {
+			            enabled: true,
+			            style: {
+			                fontWeight: 'bold',
+			                color: (
+			                    Highcharts.defaultOptions.title.style &&
+			                    Highcharts.defaultOptions.title.style.color
+			                ) || 'gray',
+			                textOutline: 'none'
+			            }
+			        }
+			    },
+			    tooltip: {
+			        headerFormat: '<b>{point.x}</b><br/>',
+			        pointFormat: '{series.name}: {point.y}<br/>Tổng: {point.stackTotal}'
+			    },
+			    plotOptions: {
+			        column: {
+			            stacking: 'normal',
+			            dataLabels: {
+			                enabled: true
+			            }
+			        }
+			    },
+			    series: [{
+			        name: 'Đã hoàn thành',
+			        data: [3, 5, 1, 13, 12, 3, 5, 12, 33, 31, 0, 0]
+			    }, {
+			        name: 'Chưa hoàn thành',
+			        data: [14, 8, 8, 12, 13, 12, 3, 5, 12, 3, 0, 0]
+			    }],
+			    credits: {
+				    enabled: false
+				},
+			});
+
+			Highcharts.chart('chart-2', {
+			    chart: {
+			        type: 'column'
+			    },
+			    colors: ['#198754', '#dc3545', '#0dcaf0'],
+			    title: {
+			        align: 'center',
+			        text: ''
+			    },
+			    accessibility: {
+			        announceNewData: {
+			            enabled: true
+			        }
+			    },
+			    xAxis: {
+			        type: 'category'
+			    },
+			    yAxis: {
+			        title: {
+			            text: 'Số nhiệm vụ chỉ đạo (%)'
+			        }
+
+			    },
+			    legend: {
+			        enabled: false
+			    },
+			    plotOptions: {
+			        series: {
+			            borderWidth: 0,
+			            dataLabels: {
+			                enabled: true,
+			                format: '{point.y:.1f}%'
+			            }
+			        }
+			    },
+
+			    tooltip: {
+			        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+			        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+			    },
+
+			    series: [
+			        {
+			            name: "Browsers",
+			            colorByPoint: true,
+			            data: [
+			                {
+			                    name: "Chưa hoàn thành trong hạn",
+			                    y: 63.06,
+			                },
+			                {
+			                    name: "Chưa hoàn thành quá hạn",
+			                    y: 19.84,
+			                },
+			                {
+			                    name: "Chưa hoàn thành không hạn",
+			                    y: 4.18,
+			                }
+			            ]
+			        }
+			    ],
+			    credits: {
+				    enabled: false
+				},
+			});
+
+
+			Highcharts.chart('chart-3', {
+			    chart: {
+			        type: 'column'
+			    },
+			    colors: ['#198754', '#dc3545', '#0dcaf0'],
+			    title: {
+			        align: 'center',
+			        text: ''
+			    },
+			    accessibility: {
+			        announceNewData: {
+			            enabled: true
+			        }
+			    },
+			    xAxis: {
+			        type: 'category'
+			    },
+			    yAxis: {
+			        title: {
+			            text: 'Số nhiệm vụ chỉ đạo (%)'
+			        }
+
+			    },
+			    legend: {
+			        enabled: false
+			    },
+			    plotOptions: {
+			        series: {
+			            borderWidth: 0,
+			            dataLabels: {
+			                enabled: true,
+			                format: '{point.y:.1f}%'
+			            }
+			        }
+			    },
+
+			    tooltip: {
+			        headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+			        pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+			    },
+
+			    series: [
+			        {
+			            name: "Browsers",
+			            colorByPoint: true,
+			            data: [
+			                {
+			                    name: "Đã hoàn thành trong hạn",
+			                    y: 15,
+			                },
+			                {
+			                    name: "Đã hoàn thành quá hạn",
+			                    y: 65,
+			                },
+			                {
+			                    name: "Đã hoàn thành không hạn",
+			                    y: 20,
+			                }
+			            ]
+			        }
+			    ],
+			    credits: {
+				    enabled: false
+				},
+			});
+
+
+
+			$(document).ready(()=>{
+				$("#select-year").val('2020');
+			});  
+
+			$("#select-year").change(function(){
+				var settings = {
+					"url": "http://bentre-api.ngn.com.vn//website/login",
+					"method": "POST",
+					"timeout": 0,
+					"headers": {
+						"Authorization": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0dGRodW9uZy52cHVibmQiLCJpYXQiOjE2NjA3MDM3ODYsImV4cCI6MTY2MTMwODU4Nn0.G-oAMUS150xXA7CAzy0dQCPSuC5Dvk77Wbj7NBSVhdPOUYWcqlz5vidH2scOjIU-B7EX4NKcJGTf7SiH3K4mUA",
+						"Content-Type": "application/json"
+					},
+					"data": JSON.stringify({
+						"username": "leminhhung",
+						"password": "abc123"
+					}),
+				};
+
+				$.ajax(settings).done(function (response) {
+					console.log(response);
+				});
+
+				alert($(this).val());
+			});
+		</script>
+	</body>
+</html>

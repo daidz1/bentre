@@ -1,0 +1,7 @@
+.details{
+	width: 100%;
+}
+
+.details [part="summary-content"] {
+	width:100%;
+}
